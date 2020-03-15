@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Livraria.WebApplication.Models.LivroViewModel>
+
+@{
+    ViewData["Title"] = "Livros";
+}
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+<script src="~/js/site.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" defer></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json"></script>
+
+<div class="title">Livros</div>
+<p>
+    <a asp-action="NovoLivro" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Adicionar Livro</a>
+</p>
+<table id="tabelaLivros" class="table table-striped">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Autor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantidade)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink("", "Editar", new { id = item.Id }, new { @class = "btn btn-outline-primary btn-sm fa fa-pencil", @title = "Editar" })
+                    @Html.ActionLink("", "Detalhes", new { id = item.Id }, new { @class = "btn btn-outline-secondary btn-sm fa fa-book", @title = "Detalhes" })
+                    @Html.ActionLink("", "Excluir", new { id = item.Id }, new { @class = "btn btn-outline-danger btn-sm fa fa-minus", @title = "Excluir" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Autor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantidade)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
