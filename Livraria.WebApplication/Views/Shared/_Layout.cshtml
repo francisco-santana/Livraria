@@ -22,7 +22,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <a class="navbar-brand" asp-area="" asp-controller="Livro" asp-action="Index">
                     <img src="~/imagens/livro-logo.png" title="Livraria Santana" class="logo"/>
                     Livraria Santana
                 </a>
@@ -33,10 +33,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Livro" asp-action="Index">Início</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a>
+                            <a class="nav-link" asp-area="" asp-controller="Livro" asp-action="Sobre">Sobre</a>
                         </li>
                     </ul>
                 </div>
@@ -44,7 +44,6 @@
         </nav>
     </header>
     <div class="container">
-        <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -52,7 +51,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - Livraria Santana - <a asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a>
+            &copy; 2020 - Livraria Santana - <a asp-area="" asp-controller="Livro" asp-action="Sobre">Sobre</a>
         </div>
     </footer>
 

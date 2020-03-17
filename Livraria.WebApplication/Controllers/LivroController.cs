@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Livraria.WebApplication.Controllers
 {
-    public class HomeController : Controller
+    public class LivroController : Controller
     {
         private const string ACTION_INDEX = "Index";
         private readonly LivrariaApi<LivroViewModel> _api;
 
-        public HomeController()
+        public LivroController()
         {
             _api = new LivrariaApi<LivroViewModel>("api/livraria/livro");
         }

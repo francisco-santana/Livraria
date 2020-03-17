@@ -43,7 +43,7 @@ namespace Livraria.WebApplication
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Livro/Error");
             }
 
             app.UseStaticFiles();
@@ -53,7 +53,7 @@ namespace Livraria.WebApplication
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Livro}/{action=Index}/{id?}");
             });
         }
     }
